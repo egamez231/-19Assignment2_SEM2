@@ -106,7 +106,7 @@ void EngineType::calcTorque(){
 
     power = HP * 1.013869738;
 
-    Tourque = power / (3.14159265359 * maxrpm);
+    Tourque = (power * 3000) / (3.14159265359 * maxrpm);
 
 }
 
@@ -115,7 +115,7 @@ void EngineType::calcHP(){
 
     double power;
 
-    power = Tourque * 3.14159265359 * maxrpm;
+    power = (Tourque * 3.14159265359 * maxrpm)/3000;
 
     HP = power / 1.013869738;
 }
